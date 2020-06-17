@@ -5,10 +5,8 @@ import os
 import re
 with open("twitter_credentials.json", "r") as file:
     creds = json.load(file)
-with open("twitter_credentials.json", "r") as file:
-    creds = json.load(file)
+#You need to have created a Twitter app, generated the keys
 auth = tweepy.AppAuthHandler(creds['CONSUMER_KEY'], creds['CONSUMER_SECRET'])
-
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 if (not api):
     print ("Can't Authenticate")
